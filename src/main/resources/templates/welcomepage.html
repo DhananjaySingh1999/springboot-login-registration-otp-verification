@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #ffecd2, #fcb69f);
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 40px 60px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+      text-align: center;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 25px;
+      color: #2d3436;
+    }
+
+    .role-links {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .role-links a {
+      display: inline-block;
+      padding: 12px;
+      background-color: #0984e3;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .role-links a:hover {
+      background-color: #0652dd;
+    }
+
+    .logout-btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #d63031;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .logout-btn:hover {
+      background-color: #b71c1c;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>👋 Hello! Welcome to the Application</h1>
+
+    <div class="role-links">
+      <a th:href="@{/student}">Go to Student Section</a>
+      <a th:href="@{/emp}">Go to Employee Section</a>
+      <a th:href="@{/admin}">Go to Admin Section</a>
+    </div>
+
+    <a class="logout-btn" th:href="@{/logout}">Logout</a>
+  </div>
+</body>
+</html>

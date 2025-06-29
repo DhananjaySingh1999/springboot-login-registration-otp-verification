@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>OTP Verification</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .otp-container {
+      background-color: white;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+    }
+
+    .otp-container h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .otp-container input[type="text"],
+    .otp-container input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .otp-container input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .otp-container input[type="submit"]:hover {
+      background-color: #218838;
+    }
+    .error {
+	color: red;
+	margin-bottom: 15px;
+	font-weight: bold;
+}
+  </style>
+</head>
+<body>
+  <div class="otp-container">
+    <h2>OTP Verification</h2>
+    
+    <div th:if="${error}" class="error-message" th:text="${error}"></div>
+    <form action="/verifyOtp" method="post">
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+      <label for="username">Username (Email):</label>
+      <input type="text" id="username" name="username" placeholder="Enter your email"
+             th:value="${username}" required>
+
+      <label for="otp">OTP:</label>
+      <input type="number" id="otp" name="otp" placeholder="Enter received OTP" required>
+
+      <input type="submit" value="Verify OTP">
+    </form>
+  </div>
+</body>
+</html>

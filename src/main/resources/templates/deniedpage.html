@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Access Denied</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #ff6a6a, #f8c291);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #fff;
+    }
+
+    .container {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 40px 60px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #ffcccb;
+    }
+
+    .logout-btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background-color: #c0392b;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .logout-btn:hover {
+      background-color: #922b21;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🚫 Access Denied</h1>
+    <p>Please contact the administrator for the necessary access permissions.</p>
+    <a class="logout-btn" th:href="@{/logout}">Logout</a>
+     <a class="logout-btn" th:href="@{/welcome}">Go to Welcome Section</a>
+  </div>
+</body>
+</html>
